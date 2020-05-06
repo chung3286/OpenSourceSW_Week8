@@ -2,15 +2,22 @@ package getPi;
 
 public class GetPi {
 	public static void main(String[] args) {
-		// John Wallis
-		int howmany = 2000000, n=1;
-		double pi3=1;
-		
-		for(int i=1; i<howmany; i++) {
-			pi3 = pi3 * ((4*Math.pow(n, 2))/(4*Math.pow(n, 2)-1));
-			n++;
+		// Ramanujan
+		double pi4=0;
+		double n=1103;
+		for(int i=1; i<10; i++) {
+			n = n + (fact(4*(int)i)*(1103+26390*i))/(Math.pow(fact((int)i), 4)*Math.pow(396, 4*i));
 		}
-		pi3 *= 2;
-		System.out.println(pi3);
+		pi4 = 1/((Math.sqrt(8)/9801)*n);
+		System.out.println(pi4);
+	}
+	
+	public static int fact(int n) {
+		if(n == 0)
+			return 1;
+		else if (n == 1)
+			return n;
+		else 
+			return fact(n-1) * n;
 	}
 }
