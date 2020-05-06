@@ -2,16 +2,15 @@ package getPi;
 
 public class GetPi {
 	public static void main(String[] args) {
-		// Leibniz
+		// Euler
 		int howmany = 2000000;
-		double mark=1, denominator=1, pi=0;
-
+		int n=1;
+		double pi2=0;
 		for(int i=0; i<howmany; i++) {
-			pi = pi + mark * (1/denominator);
-			mark *= -1;
-			denominator += 2;
+			pi2 = pi2 + 1 / (Math.pow(n, 2));
+			n++;
 		}
-		pi *= 4;
-		System.out.println(pi);
+		pi2 = Math.sqrt(pi2*6);
+		System.out.println(pi2);
 	}
 }
